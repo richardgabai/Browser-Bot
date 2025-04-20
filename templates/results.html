@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Bot - Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    <strong>Keyword:</strong> {{ result.keyword }}<br>
+                    <strong>Title:</strong> {{ result.title }}<br>
+                    <strong>Link:</strong> <a href="{{ result.link }}" target="_blank">{{ result.link }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
